@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cotizador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="carro-compra">
+            <h1>Simulador de Compra</h1>
+            <form action="index.html" method="post">
+                <table class="tabla-uno">
+                    <tr>
+                        <td><label for="">Producto</label></td>
+                        <td>
+                            <select id="form-producto" class="productos" name="" name="form-producto">
+
+                                <option class="opcion" value="CPU">CPU</option>
+                                <option class="opcion" value="Pantalla">Pantalla</option>
+                                <option class="opcion" value="Teclado"> Teclado</option>
+                                <option class="opcion" value="Mouse">Mouse</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label class="valor ingreso" for="">Valor</label></td>
+                        <td><input id="form-valor" type="text" name="form-valor"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="cantidad ingreso" for="">Cantidad</label></td>
+                        <td><input id="form-cantidad" type="number" name="form-cantidad"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button id="agregar-producto" type="button">Agregar
+                                Producto</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+
+            <br>
+            <table class="tabla-dos">
+                <thead class="descripcion">
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Producto</th>
+                        <th>Valor</th>
+                        <th>Subtotal</th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                </thead>
+                <tbody id="tabla-productos">
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <span class="total"><strong>Total</strong></span>
+                            <th id="total">$</th>
+                        </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+
+</html>
