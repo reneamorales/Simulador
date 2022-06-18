@@ -13,10 +13,10 @@
     <div class="contenedor">
         <div class="carro-compra">
             <h1>Simulador de Compra</h1>
-            <form action="index.html" method="post">
+            <form id="formulario">
                 <table class="tabla-uno">
                     <tr>
-                        <td><label for="">Producto</label></td>
+                        <td><label for="">Producto <span class="obligatorio">*</span></label></td>
                         <td>
                             <select id="form-producto" class="productos" name="" name="form-producto">
 
@@ -29,23 +29,25 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><label class="valor ingreso" for="">Valor</label></td>
-                        <td><input id="form-valor" type="text" name="form-valor"></td>
+                        <td><label class="valor ingreso" for="">Valor <span class="obligatorio">*</span></label></td>
+                        <td><input id="form-valor" type="text" name="infoValor"></td>
                     </tr>
                     <tr>
-                        <td><label class="cantidad ingreso" for="">Cantidad</label></td>
-                        <td><input id="form-cantidad" type="number" name="form-cantidad"></td>
+                        <td><label class="cantidad ingreso" for="">Cantidad <span class="obligatorio">*</span></label></td>
+                        <td><input id="form-cantidad" type="number" name="infoCantidad"></td>
                     </tr>
+
                     <tr>
                         <td colspan="2">
-                            <button id="agregar-producto" type="button">Agregar
+                            <button id="agregar-producto" type="submit">Agregar
                                 Producto</button>
                         </td>
                     </tr>
 
                 </table>
-            </form>
 
+            </form>
+            <span class="msj-obli" aria-hidden="false">Todos los campos marcados con (*) son obligatorios.</span>
             <br>
             <table class="tabla-dos">
                 <thead class="descripcion">
