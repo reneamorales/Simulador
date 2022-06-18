@@ -1,17 +1,50 @@
+//Prevencion del efecto enviar
+
+const form = document.querySelector('#formulario');
+
+const enviarFormulario = (event) => {
+    event.preventDefault();
+
+
+    const {
+        infoValor,
+        infoCantidad
+    } = event.target
+
+
+    //Validacion
+
+    if (infoValor.value.length === 0 || infoCantidad.value.length === 0) {
+        mostrarMensaje()
+
+    } else {
+        agregarProducto()
+    }
+
+    function mostrarMensaje() {
+
+        $('.msj-obli').css('display', 'block');
+        $('.obligatorio').css('color', 'red');
+    }
+
+};
+
+form.addEventListener('submit', enviarFormulario);
+
 //Eventos
 
-$('#agregar-producto').click(agregarProducto);
-
-$('#form-cantidad').keypress(mostrarMensaje);
+$('#form-cantidad').keypress(envioEnter);
 
 
 //Funciones
 
-function mostrarMensaje(tecla) {
+function envioEnter(tecla) {
     if (tecla.which == 13) {
         agregarProducto();
+
     }
 }
+
 
 function agregarProducto() {
 
@@ -23,10 +56,9 @@ function agregarProducto() {
 
     datos.classList.add("intercalado");
 
-    console.log(producto.value);
 
     var subtotal = Number(valor.value) * Number(cantidad.value);
-    datos.innerHTML = datos.innerHTML + "<tr><td>" + producto.value + "</td><td>" + valor.value + "</td><td>" + cantidad.value + "</td><td name='subtotal'>" + subtotal + "</td><td><button id=eliminar onclick='eliminarProducto(this)'>Quitar</button></td></tr>";
+    datos.innerHTML = datos.innerHTML + "<tr><td>" + cantidad.value + "</td><td>" + producto.value + "</td><td>" + valor.value + "</td><td name='subtotal'>" + subtotal + "</td><td><button id=eliminar onclick='eliminarProducto(this)'>Quitar</button></td></tr>";
 
 
 
@@ -45,7 +77,7 @@ function calcularTotal() {
 
     }
     total.innerText = "$" + suma;
-    console.log(suma);
+
 }
 
 function eliminarProducto(producto) {
