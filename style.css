@@ -42,6 +42,17 @@ table {
     padding: 15px;
 }
 
+.obligatorio {
+    color: black;
+}
+
+.msj-obli {
+    font-style: italic;
+    color: red;
+    margin-left: 55px;
+    display: none;
+}
+
 .tabla-dos {
     border-collapse: separate;
     font-style: italic;
